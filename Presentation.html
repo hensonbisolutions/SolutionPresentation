@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI-Assisted FDE Staffing Intelligence Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0f172a;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+/* ========================================
+LAYOUT
+======================================== */
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding:40px 0;
+}
+
+section{
+    margin-bottom:60px;
+}
+
+/* ========================================
+HERO
+======================================== */
+
+.hero{
+    background:linear-gradient(
+        135deg,
+        rgba(30,41,59,0.95),
+        rgba(15,23,42,0.95)
+    );
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:24px;
+
+    padding:60px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.35);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(59,130,246,0.15);
+    filter:blur(120px);
+    top:-200px;
+    right:-150px;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:900;
+    letter-spacing:-2px;
+    margin-bottom:15px;
+    color:white;
+}
+
+.hero p{
+    font-size:1.2rem;
+    color:#94a3b8;
+    max-width:800px;
+}
+
+/* ========================================
+GRID
+======================================== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* ========================================
+CARDS
+======================================== */
+
+.card{
+    background:rgba(30,41,59,0.8);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:
+        0 6px 24px rgba(0,0,0,0.25);
+
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(96,165,250,0.3);
+}
+
+.card h3{
+    color:white;
+    margin-bottom:15px;
+    font-size:1.2rem;
+}
+
+.card p,
+.card li{
+    color:#cbd5e1;
+}
+
+/* ========================================
+SECTION TITLES
+======================================== */
+
+.section-title{
+    font-size:2rem;
+    font-weight:800;
+    margin-bottom:25px;
+    color:white;
+}
+
+/* ========================================
+KPI CARDS
+======================================== */
+
+.kpi{
+    background:linear-gradient(
+        135deg,
+        #1e293b,
+        #111827
+    );
+
+    padding:30px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+.kpi h2{
+    font-size:2.5rem;
+    color:#60a5fa;
+}
+
+.kpi p{
+    color:#94a3b8;
+    margin-top:8px;
+}
+
+/* ========================================
+ARCHITECTURE FLOW
+======================================== */
+
+.architecture{
+    background:rgba(15,23,42,0.9);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    overflow-x:auto;
+}
+
+.architecture pre{
+    color:#93c5fd;
+    font-size:0.95rem;
+    line-height:2;
+}
+
+/* ========================================
+TIMELINE
+======================================== */
+
+.timeline{
+    border-left:3px solid #3b82f6;
+    padding-left:25px;
+}
+
+.timeline-item{
+    margin-bottom:30px;
+}
+
+.timeline-item h4{
+    color:white;
+    margin-bottom:8px;
+}
+
+/* ========================================
+TABLE
+======================================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:18px;
+}
+
+th{
+    background:#1e293b;
+    color:white;
+    padding:18px;
+    text-align:left;
+}
+
+td{
+    background:#111827;
+    padding:18px;
+    border-top:1px solid rgba(255,255,255,0.05);
+    color:#cbd5e1;
+}
+
+/* ========================================
+FOOTER
+======================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,0.05);
+    margin-top:80px;
+}
+
+/* ========================================
+RESPONSIVE
+======================================== */
+
+@media(max-width:768px){
+
+    .hero{
+        padding:35px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .section-title{
+        font-size:1.6rem;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>🧠 AI-Assisted FDE Staffing Intelligence</h1>
+
+        <p>
+            Enterprise workforce optimisation platform combining
+            staffing intelligence, explainable AI recommendations,
+            allocation visibility, and human-led staffing governance.
+        </p>
+
+    </section>
+
+    <!-- KPI SECTION -->
+
+    <section>
+
+        <div class="grid">
+
+            <div class="kpi">
+                <h2>40+</h2>
+                <p>Forward Deployed Engineers</p>
+            </div>
+
+            <div class="kpi">
+                <h2>15</h2>
+                <p>Open Opportunities</p>
+            </div>
+
+            <div class="kpi">
+                <h2>8</h2>
+                <p>Industry Sectors</p>
+            </div>
+
+            <div class="kpi">
+                <h2>AI</h2>
+                <p>Assisted Recommendations</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXECUTIVE SUMMARY -->
+
+    <section>
+
+        <h2 class="section-title">Executive Summary</h2>
+
+        <div class="card">
+
+            <p>
+                The proposed solution introduces an AI-assisted staffing
+                intelligence platform designed to improve workforce visibility,
+                staffing quality, mobilisation speed, and allocation governance
+                across Forward Deployed Engineering teams.
+            </p>
+
+            <br>
+
+            <p>
+                The platform combines structured workforce analytics,
+                explainable recommendation logic, AI-assisted insight generation,
+                and operational dashboards into a scalable enterprise solution.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CHALLENGES -->
+
+    <section>
+
+        <h2 class="section-title">Current Challenges</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Fragmented Data</h3>
+                <p>
+                    Workforce information distributed across multiple systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Limited Visibility</h3>
+                <p>
+                    Lack of consolidated view across skills, certifications,
+                    and availability.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Slow Mobilisation</h3>
+                <p>
+                    Manual staffing processes reduce operational agility.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Inconsistent Decisions</h3>
+                <p>
+                    Staffing decisions dependent on individual knowledge.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARCHITECTURE -->
+
+    <section>
+
+        <h2 class="section-title">Enterprise Architecture</h2>
+
+        <div class="architecture">
+
+<pre>
+HR Systems / Employee Records
+            ↓
+Project Delivery Systems
+            ↓
+Self-Assessment Inputs
+            ↓
+Data Ingestion Layer (Python ETL / APIs)
+            ↓
+Central Workforce Database
+(PostgreSQL / Azure SQL)
+            ↓
+Matching & Scoring Engine
+(Explainable Recommendation Logic)
+            ↓
+AI Enrichment Layer
+(OpenAI / NLP Insights)
+            ↓
+Streamlit Intelligence Dashboard
+            ↓
+Human Staffing Decision
+</pre>
+
+        </div>
+
+    </section>
+
+    <!-- TECH STACK -->
+
+    <section>
+
+        <h2 class="section-title">Technology Stack</h2>
+
+        <table>
+
+            <tr>
+                <th>Layer</th>
+                <th>Technology</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>Frontend</td>
+                <td>Streamlit</td>
+                <td>Enterprise dashboard UI</td>
+            </tr>
+
+            <tr>
+                <td>Analytics</td>
+                <td>Pandas</td>
+                <td>Workforce analytics</td>
+            </tr>
+
+            <tr>
+                <td>Database</td>
+                <td>SQLite / PostgreSQL</td>
+                <td>Structured workforce storage</td>
+            </tr>
+
+            <tr>
+                <td>Visualisation</td>
+                <td>Plotly</td>
+                <td>Interactive dashboards</td>
+            </tr>
+
+            <tr>
+                <td>AI Layer</td>
+                <td>OpenAI API</td>
+                <td>Insight generation</td>
+            </tr>
+
+            <tr>
+                <td>Development</td>
+                <td>VS Code</td>
+                <td>Rapid development environment</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- AI CAPABILITIES -->
+
+    <section>
+
+        <h2 class="section-title">AI-Assisted Capability</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Recommendation Summaries</h3>
+                <p>
+                    AI-generated staffing rationale and contextual insights.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Skill Enrichment</h3>
+                <p>
+                    NLP-assisted skill extraction from delivery history.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Workforce Intelligence</h3>
+                <p>
+                    Emerging capability gaps and utilisation observations.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Future Forecasting</h3>
+                <p>
+                    Potential predictive staffing analytics capability.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ROADMAP -->
+
+    <section>
+
+        <h2 class="section-title">Delivery Roadmap</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <h4>Phase 1 – Prototype</h4>
+                <p>
+                    Simulated workforce datasets, explainable scoring engine,
+                    Streamlit dashboards, AI-assisted insight generation.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Phase 2 – Enterprise Integration</h4>
+                <p>
+                    HR system integration, API ingestion, SQL database migration,
+                    operational automation.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Phase 3 – Advanced Intelligence</h4>
+                <p>
+                    NLP enrichment, predictive staffing analytics,
+                    adaptive workforce optimisation.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GOVERNANCE -->
+
+    <section>
+
+        <h2 class="section-title">Governance & Explainability</h2>
+
+        <div class="card">
+
+            <p>
+                The platform prioritises explainability, transparency,
+                and human oversight.
+            </p>
+
+            <br>
+
+            <ul>
+                <li>Human-led staffing approval</li>
+                <li>Explainable recommendation logic</li>
+                <li>Auditable decision processes</li>
+                <li>Transparent scoring methodology</li>
+                <li>Enterprise governance alignment</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        AI-Assisted FDE Staffing Intelligence Platform<br>
+        Enterprise Workforce Optimisation Proposal
+
+    </div>
+
+</div>
+
+</body>
+</html>
